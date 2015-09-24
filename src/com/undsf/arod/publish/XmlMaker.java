@@ -5,6 +5,8 @@ import com.undsf.arod.Bible;
 import com.undsf.arod.Book;
 import com.undsf.arod.Chapter;
 import com.undsf.arod.Testament;
+import com.undsf.arod.collector.IBibleCrawler;
+import com.undsf.arod.collector.TextPlainCrawler;
 import com.undsf.arod.collector.kyhs.BibleCrawler;
 import com.undsf.arod.collector.kyhs.CUVCrawler;
 import org.w3c.dom.*;
@@ -30,10 +32,16 @@ public class XmlMaker {
 
     public void init(){
         long startTime = System.currentTimeMillis();
-        BibleCrawler crawler = new CUVCrawler();
-        crawler.crawl();
-        bible = crawler.getBible();
-        System.out.println((System.currentTimeMillis() - startTime) + "us");
+        // BibleCrawler crawler = new CUVCrawler();
+        try {
+            IBibleCrawler crawler = new TextPlainCrawler("C:\\temp\\ARoD\\bible-cuv.txt");
+            crawler.crawl();
+            bible = crawler.getBible();
+            System.out.println((System.currentTimeMillis() - startTime) + "us");
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     public Element createBook(Book book){

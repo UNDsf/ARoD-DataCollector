@@ -46,35 +46,4 @@ public class FileUtil {
     public static String getRelativePath(File file, File refer){
         return getRelativePath(file.getAbsolutePath(), refer.getAbsolutePath());
     }
-
-    public static void writeFile(File file, String content){
-        try {
-            FileWriter fw = new FileWriter(file);
-            fw.append(content);
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-    }
-
-    public static String readFile(File file, String encoding){
-        Long filelength = file.length();
-        byte[] filecontent = new byte[filelength.intValue()];
-        try {
-            FileInputStream in = new FileInputStream(file);
-            in.read(filecontent);
-            in.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            return new String(filecontent, encoding);
-        } catch (UnsupportedEncodingException e) {
-            System.err.println("The OS does not support " + encoding);
-            e.printStackTrace();
-            return null;
-        }
-    }
 }

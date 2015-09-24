@@ -1,4 +1,4 @@
-package com.undsf.arod.collector.kyhs;
+package com.undsf.arod.collector;
 
 /**
  * Created by Arathi on 2015/9/19.

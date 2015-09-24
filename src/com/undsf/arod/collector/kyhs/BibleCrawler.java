@@ -4,6 +4,7 @@ import com.undsf.arod.Bible;
 import com.undsf.arod.Book;
 import com.undsf.arod.Chapter;
 import com.undsf.arod.Testament;
+import com.undsf.arod.collector.ICrawlable;
 import com.undsf.util.UndHttpClient;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
