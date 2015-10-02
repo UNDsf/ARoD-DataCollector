@@ -52,6 +52,10 @@ public class Bible {
         this.allBooks.addAll(testament.getBooks());
     }
 
+    public List<Book> getAllBooks(){
+        return allBooks;
+    }
+
     public String toString(){
         return version+" (共" + allBooks.size() + "卷)";
     }

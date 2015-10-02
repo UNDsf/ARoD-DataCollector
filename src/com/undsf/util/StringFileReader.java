@@ -30,4 +30,11 @@ public class StringFileReader extends InputStreamReader {
         String content = new String(contentArray, 0, readLength);
         return content;
     }
+
+    public static String ReadAll(String path) throws IOException{
+        StringFileReader sfr = new StringFileReader(path);
+        String content = sfr.readAll();
+        sfr.close();
+        return content;
+    }
 }

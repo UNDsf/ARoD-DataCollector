@@ -9,8 +9,8 @@ import java.util.regex.Pattern;
  * Created by Arathi on 2015/6/26.
  */
 public class TemplateEngine {
-    public static final String DEFAULT_LEFT_DELIMITER = "\\${";
-    public static final String DEFAULT_RIGHT_DELIMITER = "}";
+    public static final String DEFAULT_LEFT_DELIMITER = "\\$\\{";
+    public static final String DEFAULT_RIGHT_DELIMITER = "\\}";
 
     protected String template;
     protected String leftDelimiter;
